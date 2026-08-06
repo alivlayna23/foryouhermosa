@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Morning, My Love ☀️</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
+      --card-bg: rgba(255, 255, 255, 0.88);
+      --primary-color: #e63946;
+      --text-color: #2b2d42;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--bg-gradient);
+      overflow-x: hidden;
+      padding: 20px;
+      position: relative;
+    }
+
+    /* Animated background hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255, 107, 129, 0.6);
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      bottom: -30px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Main Card Container */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 35px 25px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      z-index: 10;
+    }
+
+    .sun-icon {
+      font-size: 45px;
+      margin-bottom: 5px;
+      display: inline-block;
+      animation: spinSun 12s linear infinite;
+    }
+
+    @keyframes spinSun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Photo Slot Frame */
+    .photo-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px auto;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
+      overflow: hidden;
+      background-color: #ffe6e8;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .photo-container:hover .photo-overlay {
+      opacity: 1;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: rgba(255, 255, 255, 0.95);
+      border-left: 4px solid var(--primary-color);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .quote-text {
+      font-size: 1rem;
+      color: var(--text-color);
+      font-style: italic;
+      line-height: 1.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: #ff4b5c;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 15px rgba(255, 75, 92, 0.3);
+    }
+
+    button:hover {
+      background: #e63946;
+      transform: scale(1.02);
+    }
+
+    .secondary-btn {
+      background: #ffffff;
+      color: #ff4b5c;
+      border: 2px solid #ff4b5c;
+      box-shadow: none;
+    }
+
+    .secondary-btn:hover {
+      background: #fff0f3;
+    }
+
+    /* Custom Input Controls */
+    .custom-section {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .custom-section input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .custom-section button {
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      box-shadow: none;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="hearts-container"></div>
+
+  <div class="card">
+    <div class="sun-icon">☀️</div>
+    <h1>Good Morning, Cutie! 😉💕</h1>
+    <p class="subtitle">For Milady!</p>
+
+    <!-- Photo Slot Container -->
+    <div class="photo-container" >
+      <img id="profile-pic" src="./assets/imbatman.jpg" alt="Her Photo" />
+      <div class="photo-overlay">I AM BATMAN</div>
+    </div>
+    <input type="file" id="file-input" accept="image/*" onchange="loadPhoto(event)" />
+
+    <!-- Quote Box -->
+    <div class="quote-box">
+      <p class="quote-text" id="quote">"Good morning! Are you a magician? Because whenever I look at my phone for your text, everyone else disappears."</p>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <button onclick="nextQuote()">Press Me!(it's nothing actually, just changing the quotes hahahaha.... love uuuuuu)</button>
+      <button class="secondary-btn" onclick="sendHug()">☕ Send Virtual Hug & Coffee</button>
+    </div>
+
+    <div class="footer-note">
+      Made with ❤️ just for you
+    </div>
+  </div>
+
+  <script>
+    // New Playful, Flirty & Funny Quotes
+    const quotes = [
+      "\"Good morning! Are you a magician? Because whenever I look at my phone for your text, everyone else disappears.\"",
+      "\"Are you coffee? Because you keep me up all night and give me energy every morning! ☕✨\"",
+      "\"I was going to send you something sweet this morning, but I couldn't fit myself into the text box.\"",
+      "\"Good morning! Just checked my schedule for today: 90% thinking about you, 10% trying to look productive.\"",
+      "\"Did the sun come up or did you just smile? Either way, my morning just got 100x brighter!\"",
+      "\"Good morning, beautiful. If beauty was time, you'd be an eternity!\"",
+      "\"I love you more than my snooze button... and you know that's saying a lot! ⏰❤️\"",
+      "\"Good morning! Please remember to drink water today so you can stay as cute and hydrated as ever.\""
+    ];
+
+    let currentIdx = 0;
+
+    function nextQuote() {
+      const quoteEl = document.getElementById('quote');
+      quoteEl.style.opacity = 0;
+      setTimeout(() => {
+        currentIdx = (currentIdx + 1) % quotes.length;
+        quoteEl.textContent = quotes[currentIdx];
+        quoteEl.style.opacity = 1;
+      }, 300);
+      createHeartBurst();
+    }
+
+    function sendHug() {
+      alert("☕ Virtual morning coffee and an extra cheesy hug delivered straight to your heart!");
+      createHeartBurst();
+    }
+
+    // Floating background hearts
+    function createHeart() {
+      const container = document.getElementById('hearts-container');
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+      heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+      container.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 600);
+
+    function createHeartBurst() {
+      for (let i = 0; i < 8; i++) {
+        setTimeout(createHeart, i * 50);
+      }
+    }
+  </script>
+</body>
+</html>
