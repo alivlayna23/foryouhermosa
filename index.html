@@ -287,11 +287,6 @@
       createHeartBurst();
     }
 
-    function loadPhoto(event) {
-      const image = document.getElementById('profile-pic');
-      image.src = URL.createObjectURL(event.target.files[0]);
-    }
-
     function sendHug() {
       alert("☕ Virtual morning coffee and an extra cheesy hug delivered straight to your heart!");
       createHeartBurst();
